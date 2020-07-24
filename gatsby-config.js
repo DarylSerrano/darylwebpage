@@ -12,7 +12,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-typescript`,
-    `gatsby-transformer-remark`,
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
