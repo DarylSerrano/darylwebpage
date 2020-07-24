@@ -1,0 +1,16 @@
+[
+  {
+    "image": "https://gareblogs.files.wordpress.com/2013/07/totono-review-banner.jpg",
+    "title": "Test title",
+    "description": "Test description",
+    "url": "https://www.gatsbyjs.org/packages/gatsby-transformer-json/?=json",
+    "top": true
+  },
+  {
+    "image": "NO-IMAGE",
+    "title": "Test with no image",
+    "description": "Test description 2",
+    "url": "https://www.gatsbyjs.org/docs/building-with-components/#page-template-components",
+    "top": true
+  }
+]
