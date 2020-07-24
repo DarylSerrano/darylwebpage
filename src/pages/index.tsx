@@ -2,11 +2,15 @@ import React from "react"
 import { PageProps } from "gatsby"
 import Layout from "../components/layout"
 import Main from "../components/main"
+import SEO from "../components/seo"
 
 export default function IndexRoute(props: PageProps) {
-  console.log(props.path)
   return (
     <Layout path={props.path}>
+      <SEO
+        title="Daryl Serrano Hipólito - Index"
+        description="Index of portfolio webpage of Daryl Serrano Hipólito"
+      ></SEO>
       <Main />
     </Layout>
   )
