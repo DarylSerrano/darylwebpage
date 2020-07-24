@@ -1,8 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Container from "react-bootstrap/Container"
-import Card from "react-bootstrap/Card"
-import CardGroup from "react-bootstrap/CardGroup"
 import Jumbotron from "react-bootstrap/Jumbotron"
 
 export default function Portfolio() {

@@ -3,8 +3,29 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Navbar from "react-bootstrap/Navbar"
+import { useStaticQuery, graphql } from "gatsby"
+
+type SocialInfo = {
+  dataJson: {
+    linkedin: string
+    repoUrl: string
+    github: string
+    email: string
+  }
+}
 
 export default function Footer() {
+  const { dataJson }: SocialInfo = useStaticQuery(graphql`
+    query {
+      dataJson {
+        linkedin
+        repoUrl
+        github
+        email
+      }
+    }
+  `)
+
   return (
     <Navbar sticky="bottom" expand="lg" variant="dark" bg="dark">
       <Container fluid className="text-light text-center text-md-left">
@@ -17,7 +38,10 @@ export default function Footer() {
             </p>
           </Col>
           <Col md="3">
-            <p>Made with Gatsby, you can find the code here</p>
+            <p>
+              Made with Gatsby, you can find the code{" "}
+              <a href={dataJson.repoUrl}>here</a>
+            </p>
           </Col>
           <Col md="3">
             <p>
