@@ -30,7 +30,7 @@ export default function Presentation() {
   return (
     <Jumbotron className="vertical-center text-center">
       <Container>
-        <h1 className="jumbotron-heading">Daryl Serrano Hipólito</h1>
+        <h1 className="jumbotron-heading">Hi, I'm Daryl Serrano Hipólito</h1>
 
         <p className="lead text-muted">
           I am a Computer Scientist interested on frontend, backend and DevOps

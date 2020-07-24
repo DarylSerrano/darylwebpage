@@ -28,8 +28,10 @@ export default function Proyects() {
   `)
 
   return (
-    <Jumbotron style={{ height: "100vh" }}>
-      <Container fluid style={{ paddingTop: "5%" }}>
+    <Jumbotron
+      style={{ height: "100vh", paddingTop: "5%", paddingBottom: "5%" }}
+    >
+      <Container fluid>
         <CardColumns>
           {allProyectsDataJson.nodes.map((proyect: ProyectInfo) => (
             <Card>
