@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img, { FluidObject } from "gatsby-image"
 import Card from "react-bootstrap/Card"
 import CardDeck from "react-bootstrap/CardDeck"
 import Button from "react-bootstrap/Button"
