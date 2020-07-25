@@ -1,52 +1,73 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Card from "react-bootstrap/Card"
-import CardColumns from "react-bootstrap/CardColumns"
+import CardDeck from "react-bootstrap/CardDeck"
 import Button from "react-bootstrap/Button"
 import Container from "react-bootstrap/Container"
 import Jumbotron from "react-bootstrap/Jumbotron"
 
-type ProyectInfo = {
-  image: string
-  title: string
-  description: string
-  url: string
+type ProyectsQuery = {
+  allMarkdownRemark: {
+    edges: [
+      {
+        node: {
+          frontmatter: {
+            date: string
+            description: string
+            tags: string
+            title: string
+            url: string
+          }
+        }
+      }
+    ]
+  }
 }
 
 export default function Proyects() {
-  const { allProyectsDataJson } = useStaticQuery(graphql`
+  const { allMarkdownRemark }: ProyectsQuery = useStaticQuery(graphql`
     query {
-      allProyectsDataJson {
-        nodes {
-          description
-          image
-          title
-          url
+      allMarkdownRemark(
+        filter: { frontmatter: { category: { eq: "proyect" } } }
+        sort: { fields: frontmatter___date, order: DESC }
+      ) {
+        edges {
+          node {
+            id
+            html
+            frontmatter {
+              date(formatString: "MMMM DD, YYYY")
+              description
+              tags
+              title
+              url
+            }
+          }
         }
       }
     }
   `)
 
   return (
-    <Jumbotron
-      style={{ height: "100vh", paddingTop: "5%", paddingBottom: "5%" }}
-    >
-      <Container fluid>
-        <CardColumns>
-          {allProyectsDataJson.nodes.map((proyect: ProyectInfo) => (
+    <Jumbotron>
+      <Container style={{ height: "100vh", paddingBottom: "5%" }} fluid>
+        <CardDeck>
+          {allMarkdownRemark.edges.map(edge => (
             <Card>
-              {proyect.image.includes("NO-IMAGE") ? null : (
-                <Card.Img variant="top" src={proyect.image} />
-              )}
-
               <Card.Body>
-                <Card.Title>{proyect.title}</Card.Title>
-                <Card.Text>{proyect.description}</Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Card.Title>{edge.node.frontmatter.title}</Card.Title>
+                <Card.Text>{edge.node.frontmatter.description}</Card.Text>
               </Card.Body>
+              <Card.Footer className="text-center">
+                <small className="text-muted">
+                  <Button variant="primary" href={edge.node.frontmatter.url}>
+                    Go to code
+                  </Button>
+                </small>
+              </Card.Footer>
             </Card>
           ))}
-        </CardColumns>
+        </CardDeck>
       </Container>
     </Jumbotron>
   )

@@ -33,8 +33,8 @@ export default function Presentation() {
         <h1 className="jumbotron-heading">Hi, I'm Daryl Serrano Hipólito</h1>
 
         <p className="lead text-muted">
-          I am a Computer Scientist interested on frontend, backend and DevOps
-          culture
+          I am a Computer Scientist interested on web development, frontend,
+          backend and DevOps culture
         </p>
         <ButtonGroup>
           <Button
