@@ -48,8 +48,6 @@ export default function Proyects() {
     }
   `)
 
-  console.log(allMarkdownRemark)
-
   return (
     <Jumbotron>
       <Container style={{ height: "100vh", paddingBottom: "5%" }} fluid>
