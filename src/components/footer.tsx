@@ -45,7 +45,7 @@ export default function Footer() {
           </Col>
           <Col md="3">
             <p>
-              © {new Date().getFullYear()} Copyright:{" "}
+              Copyright © {new Date().getFullYear()}{" "}
               <a href="mailto:darylserrano39@gmail.com">
                 Daryl Serrano Hipolito
               </a>
