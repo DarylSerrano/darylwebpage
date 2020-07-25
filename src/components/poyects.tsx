@@ -7,19 +7,12 @@ import Button from "react-bootstrap/Button"
 import Container from "react-bootstrap/Container"
 import Jumbotron from "react-bootstrap/Jumbotron"
 
-type CoverQuery = {
-  childImageSharp: {
-    fluid: FluidObject
-  }
-}
-
 type ProyectsQuery = {
   allMarkdownRemark: {
     edges: [
       {
         node: {
           frontmatter: {
-            cover: CoverQuery | null
             date: string
             description: string
             tags: string
@@ -44,13 +37,6 @@ export default function Proyects() {
             id
             html
             frontmatter {
-              cover {
-                childImageSharp {
-                  fluid(maxWidth: 800) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
               date(formatString: "MMMM DD, YYYY")
               description
               tags
@@ -71,12 +57,6 @@ export default function Proyects() {
         <CardDeck>
           {allMarkdownRemark.edges.map(edge => (
             <Card>
-              {edge.node.frontmatter.cover ? (
-                <Img
-                  fluid={edge.node.frontmatter.cover.childImageSharp.fluid}
-                  className="card-img-top"
-                />
-              ) : null}
               <Card.Body>
                 <Card.Title>{edge.node.frontmatter.title}</Card.Title>
                 <Card.Text>{edge.node.frontmatter.description}</Card.Text>

@@ -1,6 +1,6 @@
 ---
 category: 'proyect'
-cover: 'No-image'
+cover: 'No-Image'
 title: 'KindleClippings'
 description: 'Package that parses and organizes clippings created on Kindle'
 date: '2019-11-13'

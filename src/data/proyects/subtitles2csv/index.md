@@ -1,6 +1,6 @@
 ---
 category: 'proyect'
-cover: './cover.jpg'
+cover: 'No-Image'
 title: 'subtitles2csv'
 description: 'A simple cli tool for converting subtitle files into csv files'
 date: '2019-11-13'
