@@ -8,7 +8,7 @@ export default function IndexRoute(props: PageProps) {
   return (
     <Layout path={props.path}>
       <SEO
-        title="Daryl Serrano Hipólito - Index"
+        title="Index"
         description="Index of portfolio webpage of Daryl Serrano Hipólito"
       ></SEO>
       <Main />

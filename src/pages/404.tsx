@@ -10,7 +10,7 @@ const NotFoundPage = ({ path }) => (
   <Layout path={path}>
     <Jumbotron style={{ height: "100vh" }}>
       <Container fluid style={{ height: "100vh" }}>
-        <SEO title="Daryl Serrano Hpólito - Not found"></SEO>
+        <SEO title="Not found"></SEO>
         <Alert variant="danger">
           <Alert.Heading>NOT FOUND</Alert.Heading>
           <p>You just hit a route that doesn&#39;t exist....</p>

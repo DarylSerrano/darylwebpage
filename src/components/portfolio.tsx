@@ -51,8 +51,6 @@ export default function Portfolio() {
     }
   `)
 
-  console.log(allMarkdownRemark)
-
   return (
     <Jumbotron>
       <Container fluid>
