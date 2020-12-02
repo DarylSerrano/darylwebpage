@@ -6,11 +6,8 @@ import SEO from "../components/seo"
 
 export default function IndexRoute(props: PageProps) {
   return (
-    <Layout path={props.path}>
-      <SEO
-        title="Index"
-        description="Index of portfolio webpage of Daryl Serrano Hipólito"
-      ></SEO>
+    <Layout>
+      <SEO title="Index" description="Webpage of Daryl Serrano Hipólito"></SEO>
       <Main />
     </Layout>
   )
