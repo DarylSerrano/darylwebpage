@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 
 export default function PortfolioRoute(props: PageProps) {
   return (
-    <Layout path={props.path}>
+    <Layout>
       <SEO title="Portfolio"></SEO>
       <Portfolio></Portfolio>
     </Layout>

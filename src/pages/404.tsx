@@ -7,7 +7,7 @@ import Alert from "react-bootstrap/Alert"
 import Jumbotron from "react-bootstrap/Jumbotron"
 
 const NotFoundPage = ({ path }) => (
-  <Layout path={path}>
+  <Layout>
     <Jumbotron style={{ height: "100vh" }}>
       <Container fluid style={{ height: "100vh" }}>
         <SEO title="Not found"></SEO>
