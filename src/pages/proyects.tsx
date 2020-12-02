@@ -10,7 +10,7 @@ type ProyectsPageProps = {
 
 const ProyectsPage = ({ path }: ProyectsPageProps) => {
   return (
-    <Layout path={path}>
+    <Layout>
       <SEO title="Proyects"></SEO>
       <Proyects></Proyects>
     </Layout>

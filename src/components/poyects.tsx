@@ -1,10 +1,12 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Card from "react-bootstrap/Card"
-import CardDeck from "react-bootstrap/CardDeck"
-import Button from "react-bootstrap/Button"
-import Container from "react-bootstrap/Container"
-import Jumbotron from "react-bootstrap/Jumbotron"
+
+import { makeStyles } from "@material-ui/core/styles"
+import Card from "@material-ui/core/Card"
+import CardActions from "@material-ui/core/CardActions"
+import CardContent from "@material-ui/core/CardContent"
+import Button from "@material-ui/core/Button"
+import Typography from "@material-ui/core/Typography"
 
 type ProyectsQuery = {
   allMarkdownRemark: {
@@ -23,6 +25,23 @@ type ProyectsQuery = {
     ]
   }
 }
+
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275,
+  },
+  bullet: {
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)",
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+})
 
 export default function Proyects() {
   const { allMarkdownRemark }: ProyectsQuery = useStaticQuery(graphql`
@@ -48,27 +67,31 @@ export default function Proyects() {
     }
   `)
 
+  const classes = useStyles()
+
   return (
-    <Jumbotron>
-      <Container style={{ height: "100vh", paddingBottom: "5%" }} fluid>
-        <CardDeck>
-          {allMarkdownRemark.edges.map(edge => (
-            <Card>
-              <Card.Body>
-                <Card.Title>{edge.node.frontmatter.title}</Card.Title>
-                <Card.Text>{edge.node.frontmatter.description}</Card.Text>
-              </Card.Body>
-              <Card.Footer className="text-center">
-                <small className="text-muted">
-                  <Button variant="primary" href={edge.node.frontmatter.url}>
-                    Go to code
-                  </Button>
-                </small>
-              </Card.Footer>
-            </Card>
-          ))}
-        </CardDeck>
-      </Container>
-    </Jumbotron>
+    <>
+      {allMarkdownRemark.edges.map(edge => (
+        <Card className={classes.root} variant="outlined">
+          <CardContent>
+            <Typography
+              className={classes.title}
+              color="textSecondary"
+              gutterBottom
+            >
+              {edge.node.frontmatter.title}
+            </Typography>
+            <Typography variant="body2" component="p">
+              {edge.node.frontmatter.description}
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button href={edge.node.frontmatter.url} size="small">
+              Learn More
+            </Button>
+          </CardActions>
+        </Card>
+      ))}
+    </>
   )
 }
