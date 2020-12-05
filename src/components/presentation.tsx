@@ -1,10 +1,12 @@
 import React from "react"
-import Container from "react-bootstrap/Container"
-import Jumbotron from "react-bootstrap/Jumbotron"
-import Button from "react-bootstrap/Button"
-import ButtonGroup from "react-bootstrap/ButtonGroup"
+import ButtonGroup from "@material-ui/core/ButtonGroup"
+import IconButton from "@material-ui/core/IconButton"
 import { useStaticQuery, graphql } from "gatsby"
 import { AiFillGithub, AiFillLinkedin, AiFillMail } from "react-icons/ai"
+
+import CssBaseline from "@material-ui/core/CssBaseline"
+import Typography from "@material-ui/core/Typography"
+import Container from "@material-ui/core/Container"
 
 type SocialInfo = {
   dataJson: {
@@ -28,41 +30,30 @@ export default function Presentation() {
   `)
 
   return (
-    <Jumbotron className="vertical-center text-center">
-      <Container>
-        <h1 className="jumbotron-heading">Hi, I'm Daryl Serrano Hipólito</h1>
+    <>
+      <CssBaseline />
+      <Container fixed style={{textAlign: "center"}}>
+        <Typography variant="h2" gutterBottom>
+          Hi, I'm Daryl Serrano Hipólito
+        </Typography>
 
-        <p className="lead text-muted">
-          I am a Computer Scientist interested on web development, frontend,
-          backend and DevOps culture
-        </p>
-        <ButtonGroup>
-          <Button
-            size="lg"
-            variant="link"
-            href={dataJson.github}
-            className="my-2"
-          >
+        <Typography variant="body1" gutterBottom>
+          I am a Computer Engineer and Devops Engineer interested on frontend, backend and DevOps
+          culture
+        </Typography>
+
+        <ButtonGroup disableElevation>
+          <IconButton href={dataJson.github}>
             <AiFillGithub size={32} />
-          </Button>
-          <Button
-            size="lg"
-            href={dataJson.linkedin}
-            variant="link"
-            className="my-2"
-          >
+          </IconButton>
+          <IconButton href={dataJson.linkedin}>
             <AiFillLinkedin size={32} />
-          </Button>
-          <Button
-            size="lg"
-            variant="link"
-            href={`mailto:${dataJson.email}`}
-            className="my-2"
-          >
+          </IconButton>
+          <IconButton href={`mailto:${dataJson.email}`}>
             <AiFillMail size={32} />
-          </Button>
+          </IconButton>
         </ButtonGroup>
       </Container>
-    </Jumbotron>
+    </>
   )
 }
