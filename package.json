@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "darylwebpage",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "https://darylserrano.com",
   "version": "0.1.0",
-  "license": "0BSD",
+  "license": "Apache-2.0",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -50,9 +50,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://github.com/DarylSerrano/darylwebpage"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/DarylSerrano/darylwebpage/issues"
   }
 }
