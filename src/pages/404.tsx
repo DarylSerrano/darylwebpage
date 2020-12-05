@@ -7,6 +7,8 @@ import IconButton from "@material-ui/core/IconButton"
 
 import { AiFillHome } from "react-icons/ai"
 
+import { navigate } from "gatsby"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -21,7 +23,7 @@ const NotFoundPage = ({ path }) => (
       <Typography variant="h2" gutterBottom>
         PAGE NOT FOUND
         </Typography>
-      <IconButton href={`/`}>
+      <IconButton onClick={() => navigate("/")}>
         <AiFillHome size={32} />
       </IconButton>
     </Container>

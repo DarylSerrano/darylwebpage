@@ -8,7 +8,7 @@ import CardContent from "@material-ui/core/CardContent"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 
-type ProyectsQuery = {
+type ProjectsQuery = {
   allMarkdownRemark: {
     edges: [
       {
@@ -43,8 +43,8 @@ const useStyles = makeStyles({
   },
 })
 
-export default function Proyects() {
-  const { allMarkdownRemark }: ProyectsQuery = useStaticQuery(graphql`
+export default function Projects() {
+  const { allMarkdownRemark }: ProjectsQuery = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
         filter: { frontmatter: { category: { eq: "proyect" } } }

@@ -1,20 +1,20 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import Proyects from "../components/poyects"
+import Projects from "../components/pojects"
 import SEO from "../components/seo"
 
-type ProyectsPageProps = {
+type ProjectsPageProps = {
   path: string
 }
 
-const ProyectsPage = ({ path }: ProyectsPageProps) => {
+const ProjectsPage = ({ path }: ProjectsPageProps) => {
   return (
     <Layout>
       <SEO title="Proyects"></SEO>
-      <Proyects></Proyects>
+      <Projects></Projects>
     </Layout>
   )
 }
 
-export default ProyectsPage
+export default ProjectsPage
