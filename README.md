@@ -10,3 +10,6 @@ gatsby develop
 
 gatsby build
 ```
+
+## License
+[Apache license 2.0](./LICENSE)
