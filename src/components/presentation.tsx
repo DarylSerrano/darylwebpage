@@ -38,7 +38,7 @@ export default function Presentation() {
         </Typography>
 
         <Typography variant="body1" gutterBottom>
-          I am a Computer Engineer interested on frontend, backend and DevOps
+          I am a Computer Engineer and Devops Engineer interested on frontend, backend and DevOps
           culture
         </Typography>
 
