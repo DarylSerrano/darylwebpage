@@ -1,22 +1,30 @@
 import React from "react"
 
+import CssBaseline from "@material-ui/core/CssBaseline"
+import Typography from "@material-ui/core/Typography"
+import Container from "@material-ui/core/Container"
+import IconButton from "@material-ui/core/IconButton"
+
+import { AiFillHome } from "react-icons/ai"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Container from "react-bootstrap/Container"
-import Alert from "react-bootstrap/Alert"
-import Jumbotron from "react-bootstrap/Jumbotron"
 
 const NotFoundPage = ({ path }) => (
   <Layout>
-    <Jumbotron style={{ height: "100vh" }}>
-      <Container fluid style={{ height: "100vh" }}>
-        <SEO title="Not found"></SEO>
-        <Alert variant="danger">
-          <Alert.Heading>NOT FOUND</Alert.Heading>
-          <p>You just hit a route that doesn&#39;t exist....</p>
-        </Alert>
-      </Container>
-    </Jumbotron>
+    <SEO title="Not found"></SEO>
+    <CssBaseline></CssBaseline>
+    <Container fixed>
+      <Typography variant="h1" gutterBottom>
+        404
+        </Typography>
+      <Typography variant="h2" gutterBottom>
+        PAGE NOT FOUND
+        </Typography>
+      <IconButton href={`/`}>
+        <AiFillHome size={32} />
+      </IconButton>
+    </Container>
   </Layout>
 )
 
