@@ -1,13 +1,15 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Container from "react-bootstrap/Container"
-import Jumbotron from "react-bootstrap/Jumbotron"
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component"
 import "react-vertical-timeline-component/style.min.css"
 import { MdWork } from "react-icons/md"
+
+import CssBaseline from "@material-ui/core/CssBaseline"
+import Typography from "@material-ui/core/Typography"
+import Container from "@material-ui/core/Container"
 
 type PortfolioQuery = {
   allMarkdownRemark: {
@@ -52,9 +54,10 @@ export default function Portfolio() {
   `)
 
   return (
-    <Jumbotron>
-      <Container fluid>
-        <h2 className="jumbotron-heading">Job experience</h2>
+    <>
+      <CssBaseline></CssBaseline>
+      <Container fixed>
+        <Typography variant="h2">Job experience</Typography>
         <VerticalTimeline animate={false} layout="1-column">
           {allMarkdownRemark.edges.map(edge => {
             return (
@@ -75,6 +78,6 @@ export default function Portfolio() {
           })}
         </VerticalTimeline>
       </Container>
-    </Jumbotron>
+    </>
   )
 }
