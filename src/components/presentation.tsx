@@ -32,7 +32,7 @@ export default function Presentation() {
   return (
     <>
       <CssBaseline />
-      <Container fixed>
+      <Container fixed style={{textAlign: "center"}}>
         <Typography variant="h2" gutterBottom>
           Hi, I'm Daryl Serrano Hipólito
         </Typography>
@@ -42,7 +42,7 @@ export default function Presentation() {
           culture
         </Typography>
 
-        <ButtonGroup>
+        <ButtonGroup disableElevation>
           <IconButton href={dataJson.github}>
             <AiFillGithub size={32} />
           </IconButton>

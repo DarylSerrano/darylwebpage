@@ -63,6 +63,8 @@ export default function Portfolio() {
             return (
               <VerticalTimelineElement
                 className="vertical-timeline-element--work"
+                contentStyle={{ background: 'rgb(66, 66, 66, 1)', color: '#fff' }}
+                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                 date={`${edge.node.frontmatter.startDate} - ${edge.node.frontmatter.endDate}`}
                 icon={<MdWork />}
               >
