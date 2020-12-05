@@ -72,26 +72,30 @@ export default function Projects() {
   return (
     <>
       {allMarkdownRemark.edges.map(edge => (
-        <Card className={classes.root} variant="outlined">
-          <CardContent>
-            <Typography
-              className={classes.title}
-              color="textSecondary"
-              gutterBottom
-            >
-              {edge.node.frontmatter.title}
-            </Typography>
-            <Typography variant="body2" component="p">
-              {edge.node.frontmatter.description}
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button href={edge.node.frontmatter.url} size="small">
-              Learn More
+        <>
+          <Card className={classes.root} variant="outlined">
+            <CardContent>
+              <Typography
+                className={classes.title}
+                color="textSecondary"
+                gutterBottom
+              >
+                {edge.node.frontmatter.title}
+              </Typography>
+              <Typography variant="body2" component="p">
+                {edge.node.frontmatter.description}
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button href={edge.node.frontmatter.url} size="small">
+                Learn More
             </Button>
-          </CardActions>
-        </Card>
+            </CardActions>
+          </Card>
+          <br />
+        </>
       ))}
+
     </>
   )
 }
